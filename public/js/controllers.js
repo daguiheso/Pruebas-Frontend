@@ -11,8 +11,7 @@
 
 			pruebaService.all().then(function (data){
 				console.log(data);
-				$scope.books = data;
-				$scope.tyu = 5;
+				$scope.fjson = data;
 			});
 		}])
 		

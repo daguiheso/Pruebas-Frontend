@@ -4,13 +4,19 @@
 		Descripción
 	</div>
 	<ul class="list-group">
-	  <li class="list-group-item">Cras justo odio</li>
-	  <li class="list-group-item">Dapibus ac facilisis in</li>
-	  <li class="list-group-item">Morbi leo risus</li>
-	  <li class="list-group-item">Numero de Paginas:  {{books.page_count}}</li>
-	  <li class="list-group-item">Tamaño de Paginas: {{books.page_size}}</li>
+		<div class="" ng-repeat="item in fjson._embedded"> 
+			<div ng-repeat="subitem in item">
+				<ul class="list-group" ng-repeat="(key, value) in subitem track by key">
+					<li> {{key}} : {{value}}</p>
+				</ul>
+			</div>
+		</div>
+	  <li class="list-group-item">Numero de Paginas:  {{fjson.page_count}}</li>
+	  <li class="list-group-item">Tamaño de Paginas: {{fjson.page_size}}</li>
 	</ul>
-	<div class="" ng-repeat="item in books._embedded.books[0]"> 
-		<p>{{item}}</p>
-	</div>
+	
+</div>
+
+<div ng-repeat="n in [42, 42, 43, 43] track by myTrackingFunction(n)">
+  {{n}}
 </div>
